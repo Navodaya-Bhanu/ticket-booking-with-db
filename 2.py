@@ -1,3 +1,16 @@
+#establish coonnection
+import mysql.connector
+db_connection = mysql.connector.connect(
+    host="localhost",
+    user="your_username",
+    password="your_password",
+    database="train_booking_db"
+)
+#coonection to sql lite db
+import sqlite3
+db_connection = sqlite3.connect('train_booking.db')
+
+#integration
 def create_bookings_table():
     cursor = db_connection.cursor()
     cursor.execute('''
